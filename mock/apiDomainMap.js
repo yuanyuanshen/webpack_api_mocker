@@ -1,7 +1,5 @@
 let urls = {
-    'https://api.github.com': [
-        '/search/repositories*'
-    ]
+    'https://api.github.com': ['/search/repositories*', '/use/repositories*']
 }
 
 // key为请求域名前缀，value为请求地址数组

@@ -4,7 +4,7 @@ const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
     NODE_ENV: '"development"',
-    MOCK: process.env.MOCK
+    // MOCK: process.env.MOCK
 })
 
 console.log(module.exports)

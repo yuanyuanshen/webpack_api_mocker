@@ -1,5 +1,8 @@
 <template>
     <div>
+      <ul>
+        <li v-for="item in myConsole" :key="item.id">{{item.console}}</li>
+      </ul>
         <table>
             <thead>
                 <td>排名</td>
@@ -28,6 +31,7 @@ export default {
     data () {
         return {
             items: [],
+            myConsole: [],
             loading: true
         }
     },
@@ -41,9 +45,19 @@ export default {
                 q: 'language:javascript',
                 sort: 'stars'
             }
-            axios.get('https://api.github.com/search/repositories', {params: params})
+            axios.get('/search/repositories', {params: params})
                 .then(res => {
                     this.items = res.data.items
+                })
+                .catch(err => {
+                    throw err
+                })
+                .finally(() => {
+                    this.loading = false
+                })
+            axios.get('/api/common/list', {})
+                .then(res => {
+                    this.myConsole = res.data
                 })
                 .catch(err => {
                     throw err
