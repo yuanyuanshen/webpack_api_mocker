@@ -22,6 +22,7 @@
     ```
 
 -   针对自己定义的接口和外部正常接口同时做了测试，确保在项目中已经存在的接口能够正常运行，自己定的 api （本地 mock 数据）也可以正常运营
+    ![](https://github.com/yuanyuanshen/FrontendEngineering/blob/master/imgs/example.png)
 
 ## Build Setup
 
